@@ -35,8 +35,10 @@ public class MainActivity extends AppCompatActivity {
         logIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(email.toString().isEmpty() || password.toString().isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Log in failed", Toast.LENGTH_SHORT).show();
+                String emailField = email.getText().toString();
+                String passwordField = password.getText().toString();
+                if(emailField.isEmpty() || passwordField.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Enter credentials", Toast.LENGTH_SHORT).show();
                 } else {
                     Intent intent = new Intent(MainActivity.this, Compose.class);
                     startActivity(intent);
